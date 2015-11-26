@@ -1,4 +1,5 @@
-<h1>Home page</h1>
+<h1>Micro reddit user</h1>
+<h4>Please "log-in" or create a new user</h4>
 <% @users.each do |user| %><br />
     <%= link_to user.username, user %>
     <%= mail_to user.email, user.email %><br /><hr>
