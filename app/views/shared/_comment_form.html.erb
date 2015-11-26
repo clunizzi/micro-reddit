@@ -1,0 +1,14 @@
+<%= form_for @comment do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.hidden_field :post_id, :value => @post.id %>
+<%= f.hidden_field :user_id, :value => params[:user_id] %>
+
+<%= f.label :commenter %>
+<%= f.text_field :commenter %>
+
+<%= f.label :content %>
+<%= f.text_area :content, placeholder: "So... what is your comment?" %>
+
+<%= f.submit "Send comment" %>
+
+<% end %>

@@ -1,0 +1,16 @@
+<% link = @post.link.to_s %>
+<h1><%= link_to @post.link, "http://#{link}" %></h1><br />
+<%= simple_format @post.content, {class: "post" }, wrapper_tag: "div" %><br />
+<h4>Share a comment:</h4><br />
+<%= render 'shared/comment_form' %><br />
+<hr>
+<h4>Comment for this post:</h4>
+<%= render @post.comments %>
+<br />
+<hr>
+<%= link_to "back", :back %> | 
+<%= link_to "edit this post",
+             edit_post_path(@post) %>
+<%= link_to "destroy", post_path(@post, :user_id => @post.user_id), 
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>

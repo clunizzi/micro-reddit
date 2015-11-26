@@ -1,0 +1,14 @@
+<h1>Hi <%= @user.username %>!</h1>
+<ul>
+    <% if @posts.empty? %>
+        <h4>No post yet</h4>
+    <% else %>
+        <h4>Here your posts:</h4>
+        <%= render 'posts/feed' %>
+    <% end %>
+</ul>
+<h4>Create a post!</h4>
+</p><%= render 'shared/post_form' %></p><br>
+<%= link_to "edit my info", edit_user_path(@user) %> |
+<%= link_to "new post", '#' %>|
+<%= link_to "Home", root_url %>

@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.hidden_field :user_id, :value => @post.user.id %>
+
+<%= f.label :link %>
+<%= f.text_field :link %>
+
+<%= f.label :content %>
+<%= f.text_area :content, placeholder: "So... are you thinking?" %>
+
+<%= f.submit "Send Post" %>
+
+<% end %>
